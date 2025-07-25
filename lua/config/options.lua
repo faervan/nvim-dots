@@ -1,5 +1,6 @@
 -- Enable line count
 vim.opt.relativenumber = true
+vim.opt.number = true
 
 -- Enable sign column on the left of line count
 vim.opt.signcolumn = "yes"
