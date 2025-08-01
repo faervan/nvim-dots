@@ -1,9 +1,10 @@
 return {
 	"mfussenegger/nvim-lint",
 	config = function()
-		require('lint').linters_by_ft = {
+		require("lint").linters_by_ft = {
 			markdown = { "vale" },
 			rust = { "clippy" },
+			html = { "htmlhint" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
@@ -12,5 +13,5 @@ return {
 				require("lint").try_lint()
 			end,
 		})
-	end
+	end,
 }

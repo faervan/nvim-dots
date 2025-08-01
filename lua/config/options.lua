@@ -1,3 +1,6 @@
+-- Always use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Enable line count
 vim.opt.relativenumber = true
 vim.opt.number = true
