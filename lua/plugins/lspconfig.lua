@@ -41,5 +41,7 @@ return {
 			},
 		})
 		require("lspconfig").rust_analyzer.setup({})
+		require("lspconfig").taplo.setup({})
+		require("lspconfig").cssls.setup({})
 	end,
 }

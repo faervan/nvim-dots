@@ -6,6 +6,8 @@ return {
 			rust = { "rustfmt" },
 			toml = { "taplo" },
 			html = { "prettier" },
+			css = { "prettier" },
+			scss = { "prettier" },
 		},
 		format_on_save = {
 			-- These options will be passed to conform.format()
