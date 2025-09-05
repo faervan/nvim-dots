@@ -5,7 +5,7 @@ local opts = {
 
 -- Sudo write
 -- https://ao.bloat.cat/exchange/stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
-vim.keymap.set("ca", "w!!", 'w !sudo tee > /dev/null "%"')
+-- vim.keymap.set("ca", "w!!", 'w !sudo tee > /dev/null "%"')
 
 -- Use tab to shift lines
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
