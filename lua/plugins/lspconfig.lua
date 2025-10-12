@@ -6,42 +6,60 @@ return {
 		"neovim/nvim-lspconfig",
 	},
 	config = function()
-		require("lspconfig").harper_ls.setup({
-			settings = {
-				["harper-ls"] = {
-					userDictPath = "",
-					fileDictPath = "",
-					linters = {
-						SpellCheck = true,
-						SpelledNumbers = false,
-						AnA = true,
-						SentenceCapitalization = true,
-						UnclosedQuotes = true,
-						WrongQuotes = false,
-						-- default is true
-						LongSentences = false,
-						RepeatedWords = true,
-						Spaces = true,
-						Matcher = true,
-						CorrectNumberSuffix = true,
-						-- additional, see https://writewithharper.com/docs/rules
-						ToDoHyphen = false,
+		local lsps = {
+			{
+				"harper_ls",
+				{
+					settings = {
+						["harper-ls"] = {
+							userDictPath = "",
+							fileDictPath = "",
+							linters = {
+								SpellCheck = true,
+								SpelledNumbers = false,
+								AnA = true,
+								SentenceCapitalization = true,
+								UnclosedQuotes = true,
+								WrongQuotes = false,
+								-- default is true
+								LongSentences = false,
+								RepeatedWords = true,
+								Spaces = true,
+								Matcher = true,
+								CorrectNumberSuffix = true,
+								-- additional, see https://writewithharper.com/docs/rules
+								ToDoHyphen = false,
+							},
+							codeActions = {
+								ForceStable = false,
+							},
+							markdown = {
+								IgnoreLinkTitle = false,
+							},
+							diagnosticSeverity = "hint",
+							isolateEnglish = false,
+							dialect = "American",
+							maxFileLength = 120000,
+						},
 					},
-					codeActions = {
-						ForceStable = false,
-					},
-					markdown = {
-						IgnoreLinkTitle = false,
-					},
-					diagnosticSeverity = "hint",
-					isolateEnglish = false,
-					dialect = "American",
-					maxFileLength = 120000,
 				},
 			},
-		})
-		require("lspconfig").rust_analyzer.setup({})
-		require("lspconfig").taplo.setup({})
-		require("lspconfig").cssls.setup({})
+			{ "bashls" },
+			{ "ada_ls" },
+			{ "lua_ls" },
+			{ "rust_analyzer" },
+			{ "taplo" },
+			{ "html" },
+			{ "cssls" },
+		}
+
+		-- see https://xnacly.me/posts/2025/neovim-lsp-changes/
+		for _, lsp in pairs(lsps) do
+			local name, config = lsp[1], lsp[2]
+			vim.lsp.enable(name)
+			if config then
+				vim.lsp.config(name, config)
+			end
+		end
 	end,
 }
