@@ -5,9 +5,9 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = { "lua", "rust", "regex" },
+			ensure_installed = { "lua", "rust", "regex", "wgsl" },
 			highlight = { enable = true },
 			additional_vim_regex_highlighting = false,
 		})
-	end
+	end,
 }
