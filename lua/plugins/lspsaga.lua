@@ -3,7 +3,6 @@ return {
 	lazy = false,
 	dependencies = {
 		"neovim/nvim-lspconfig",
-		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
 		symbol_in_winbar = {
