@@ -4,6 +4,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			rust = { "rustfmt" },
+			typst = { "typstyle" },
 			toml = { "taplo" },
 			html = { "prettier" },
 			css = { "prettier" },

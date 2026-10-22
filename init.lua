@@ -12,3 +12,13 @@ if file then
 else
 	vim.notify("Could not read colorscheme")
 end
+
+vim.api.nvim_create_user_command("Zathura", function()
+	if vim.bo.filetype ~= "typst" then
+		vim.notify("Zathura command is only available for .typ files", vim.log.levels.WARN)
+		return
+	end
+
+	local pdf = vim.fn.expand("%:p:r") .. ".pdf"
+	vim.fn.jobstart({ "zathura", pdf }, { detach = true })
+end, {})

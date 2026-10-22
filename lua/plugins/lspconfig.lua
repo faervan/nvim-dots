@@ -49,6 +49,7 @@ return {
 			{ "lua_ls" },
 			{ "rust_analyzer", { cmd = { "env", "RUSTUP_TOOLCHAIN=stable", "rust-analyzer" } } },
 			-- { "wgsl_analyzer" },
+			{ "tinymist" },
 			{ "taplo" },
 			{ "html" },
 			{ "cssls" },
