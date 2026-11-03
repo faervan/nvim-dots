@@ -47,7 +47,7 @@ return {
 			{ "bashls" },
 			{ "ada_ls" },
 			{ "lua_ls" },
-			{ "rust_analyzer", { cmd = { "env", "RUSTUP_TOOLCHAIN=stable", "rust-analyzer" } } },
+			{ "rust_analyzer" },
 			-- { "wgsl_analyzer" },
 			{ "tinymist" },
 			{ "taplo" },
