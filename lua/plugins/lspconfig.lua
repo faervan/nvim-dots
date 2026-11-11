@@ -1,9 +1,22 @@
 return {
 	"mason-org/mason-lspconfig.nvim",
+	init = function()
+		vim.filetype.add({
+			extension = {
+				wesl = "wesl",
+			},
+		})
+		-- Reuse the wgsl treesitter parser for wesl buffers
+		vim.treesitter.language.register("wgsl", "wesl")
+	end,
 	opts = {},
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
 		"neovim/nvim-lspconfig",
+		{
+			"nvim-treesitter/nvim-treesitter",
+			opts = { ensure_installed = { "wgsl" } },
+		},
 	},
 	config = function()
 		local lsps = {
@@ -48,7 +61,7 @@ return {
 			{ "ada_ls" },
 			{ "lua_ls" },
 			{ "rust_analyzer" },
-			-- { "wgsl_analyzer" },
+			{ "wgsl_analyzer" },
 			{ "tinymist" },
 			{ "taplo" },
 			{ "html" },

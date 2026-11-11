@@ -1,7 +1,8 @@
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = { "*.wgsl" },
+	pattern = { "*.wgsl", "*.wesl" },
 	callback = function()
 		vim.opt.commentstring = "// %s"
+		vim.treesitter.start()
 	end,
 })
 
