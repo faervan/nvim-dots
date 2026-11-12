@@ -6,7 +6,7 @@ return {
 			rust = { "rustfmt" },
 			typst = { "typstyle" },
 			toml = { "taplo" },
-			html = { "prettier" },
+			-- html = { "prettier" },
 			css = { "prettier" },
 			scss = { "prettier" },
 		},
