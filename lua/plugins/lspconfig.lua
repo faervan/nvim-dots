@@ -20,43 +20,43 @@ return {
 	},
 	config = function()
 		local lsps = {
-			{
-				"harper_ls",
-				{
-					settings = {
-						["harper-ls"] = {
-							userDictPath = "",
-							fileDictPath = "",
-							linters = {
-								SpellCheck = true,
-								SpelledNumbers = false,
-								AnA = true,
-								SentenceCapitalization = true,
-								UnclosedQuotes = true,
-								WrongQuotes = false,
-								-- default is true
-								LongSentences = false,
-								RepeatedWords = true,
-								Spaces = true,
-								Matcher = true,
-								CorrectNumberSuffix = true,
-								-- additional, see https://writewithharper.com/docs/rules
-								ToDoHyphen = false,
-							},
-							codeActions = {
-								ForceStable = false,
-							},
-							markdown = {
-								IgnoreLinkTitle = false,
-							},
-							diagnosticSeverity = "hint",
-							isolateEnglish = false,
-							dialect = "American",
-							maxFileLength = 120000,
-						},
-					},
-				},
-			},
+			-- {
+			-- 	"harper_ls",
+			-- 	{
+			-- 		settings = {
+			-- 			["harper-ls"] = {
+			-- 				userDictPath = "",
+			-- 				fileDictPath = "",
+			-- 				linters = {
+			-- 					SpellCheck = true,
+			-- 					SpelledNumbers = false,
+			-- 					AnA = true,
+			-- 					SentenceCapitalization = true,
+			-- 					UnclosedQuotes = true,
+			-- 					WrongQuotes = false,
+			-- 					-- default is true
+			-- 					LongSentences = false,
+			-- 					RepeatedWords = true,
+			-- 					Spaces = true,
+			-- 					Matcher = true,
+			-- 					CorrectNumberSuffix = true,
+			-- 					-- additional, see https://writewithharper.com/docs/rules
+			-- 					ToDoHyphen = false,
+			-- 				},
+			-- 				codeActions = {
+			-- 					ForceStable = false,
+			-- 				},
+			-- 				markdown = {
+			-- 					IgnoreLinkTitle = false,
+			-- 				},
+			-- 				diagnosticSeverity = "hint",
+			-- 				isolateEnglish = false,
+			-- 				dialect = "American",
+			-- 				maxFileLength = 120000,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 			{ "bashls" },
 			{ "ada_ls" },
 			{ "lua_ls" },
